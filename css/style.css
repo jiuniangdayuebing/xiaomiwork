@@ -1,0 +1,645 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;         /* 去掉边框 */
+    list-style: none;  /* 去掉列表的项目符号 */
+}
+
+body {
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+    background-color: rgb(245, 245, 245);
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+/*header*/
+header {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(51, 51, 51);
+    font-size: 11px;
+}
+
+header a {
+    color: rgb(169, 169, 169);
+}
+
+header a:hover {
+    color: #fff;
+}
+
+header .headerCon {
+    width: 1200px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+}
+
+.headerCon .left {
+    float: left;
+    width: 900px;
+}
+
+.headerCon .right {
+    float: right;
+    width: 300px;
+}
+
+.headerCon .left li {
+    float: left;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.headerCon .left li.ewm {
+    position: relative;
+}
+
+.headerCon .left li.ewm a {
+    display: inline-block;
+}
+
+/* 默认隐藏二维码 */
+.headerCon .left li.ewm img {
+    position: absolute;
+    left: 0;
+    top: 35px;  /* 调整二维码的位置，根据需要修改 */
+    visibility: hidden; /* 隐藏二维码 */
+    z-index: 99; /* 确保二维码在其他内容之上 */
+    transition: visibility 0.3s ease-in-out; /* 添加过渡效果 */
+}
+
+/* 鼠标悬浮时显示二维码 */
+.headerCon .left li.ewm:hover img {
+    visibility: visible; /* 显示二维码 */
+}
+
+/* 调整 .right 里 li 的宽度 */
+.headerCon .right li {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0 10px;  /* 给 li 添加左右内边距，增加宽度 */
+}
+
+.headerCon .right li .shopcar {
+    display: block;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(66, 66, 66);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+
+.headerCon .right li .message {
+    display: block;
+    width: 120px; /* 增加消息通知按钮的宽度 */
+    height: 30px;
+    background-color: rgb(66, 66, 66);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+/* shopcar */
+/* 使用 Flex 布局 */
+nav {
+    width: 1200px;
+    height: 50px;
+    margin: 20px auto;
+    display: flex;           /* 改为 Flex 布局 */
+    align-items: center;     /* 垂直居中对齐 */
+    justify-content: space-between; /* 水平分布 */
+}
+
+/* logo 样式 */
+nav .logo {
+    width: 50px;
+    height: 50px;
+}
+
+/* 导航栏内容 */
+.navCon {
+    display: flex;
+    align-items: center;     /* 垂直居中对齐 */
+}
+
+.navCon li {
+    margin-right: 20px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.navCon li a {
+    color: #000;
+    font-size: 16px;
+}
+
+.navCon li a:hover {
+    color: rgb(255, 103, 0);
+}
+
+/* 搜索框 */
+.search {
+    display: flex;           /* 使用 Flex 布局 */
+    align-items: center;     /* 垂直居中对齐 */
+}
+
+.search input {
+    width: 200px;
+    height: 44px;
+    border: 1px solid rgb(255, 103, 0);
+    border-radius: 5px;
+    padding: 0 10px;         /* 内边距调整 */
+    color: rgb(169, 169, 169);
+    box-sizing: border-box;
+}
+
+.search button {
+    width: 55px;
+    height: 44px;
+    background-color: #ccc;
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+.search button:hover {
+    background-color: rgb(255, 103, 0);
+}
+
+/* 购物车 */
+.shopcar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.shopcar i {
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.shopcar span {
+    font-size: 14px;
+}
+
+
+/* 主体部分样式开始 */
+.main {
+    width: 1200px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.miPhoto {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.miPhoto div {
+    float: left;
+
+    height: 150px;
+    margin-right: 15px;
+}
+
+/* 图片展示部分样式 */
+/* 4个子块的样式 */
+.miPhoto .one {
+    /* 第一个块的样式 */
+    width: 255px;
+    background-color: rgb(95, 87, 80);
+}
+
+.miPhoto .one ul li {
+    width: 85px;
+    height: 75px;
+    border-right: 1px solid rgb(169, 169, 169);
+    border-bottom: 1px solid rgb(169, 169, 169);
+    padding-top: 20px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+}
+
+.miPhoto .one ul li a {
+    color: rgb(169, 169, 169);
+    font-size: 14px;
+}
+
+.miPhoto div:last-child {
+    /* 第4个子块右外边距为0 */
+    margin-right: 0;
+}
+
+/* 产品促销部分样式 */
+.seckill {
+    height: 350px;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.seckill h2 {
+    height: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.seckill ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; /* 使四个倒计时框均匀分布 */
+}
+
+.seckill .one {
+    width: 232px; /* 修改宽度 */
+    height: 270px; /* 修改高度 */
+    background-color: rgb(241, 237, 237);
+    margin-right: 15px;
+    border-top: 1px solid rgb(255, 103, 0);
+    text-align: center;
+    position: relative;
+    padding-top: 10px;
+}
+
+.seckill .one .time-slot {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f00;
+    margin-bottom: 10px;
+}
+
+.seckill .one .image {
+    margin-bottom: 10px;
+}
+
+.seckill .one .countdown-text {
+    font-size: 20px;
+    color: rgb(169, 169, 169);
+    margin-bottom: 15px;
+}
+
+.seckill .one .countdown {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap; /* 允许换行 */
+    justify-content: center; /* 中央对齐 */
+    align-items: center; /* 垂直居中对齐 */
+}
+
+.seckill .one .countdown span {
+    margin: 0 5px;
+    
+}
+
+.seckill .one .countdown .time-unit {
+    display: inline-block;
+    width: 30px; /* 每个单位的宽度 */
+    height: 30px; /* 每个单位的高度 */
+    line-height: 30px; /* 内容垂直居中 */
+    background-color: #888;
+    text-align: center;
+    margin: 0 10px;
+    color:white;
+}
+
+
+.seckill .one .countdown .time-unit:nth-child(odd) {
+    margin-right: 10px; /* 控制数字之间的间距 */
+}
+/* 设置“天”，“时”，“分”，“秒”字体为灰色 */
+.seckill .one .countdown span:not(.time-unit) {
+    color: #888;
+}
+.seckill .one .countdown .time-unit-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* 允许换行 */
+    width: 100%;
+}
+
+.seckill .one .countdown .time-unit-container .time-item {
+    display: inline-block;
+    text-align: center;
+}
+
+.seckill .one p {
+    margin: 0;
+}
+
+
+  
+  .seckill .other {
+    width: 232px;
+    height: 270px;
+    text-align: center;
+    margin-right: 15px;
+    background-color: rgb(250, 250, 250);
+  }
+  
+  .seckill ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .seckill .other p:nth-child(2) {
+    font-size: 14px;
+  }
+  
+  .seckill .other p:nth-child(3) {
+    color: #ccc;
+    font-size: 12px;
+  }
+  
+  .seckill .other p:nth-child(4) {
+    padding-top: 5px;
+    color: rgb(255, 103, 0);
+    font-size: 12px;
+  }
+  
+  .seckill p del {
+    color: #959595;
+    font-size: 12px;
+  }
+  
+  .seckill ul li:nth-child(2) {
+    border-top: 1px solid rgb(0, 255, 0);
+  }
+  
+  .seckill ul li:nth-child(3) {
+    border-top: 1px solid rgb(85, 170, 127);
+  }
+  
+  .seckill ul li:nth-child(4) {
+    border-top: 1px solid rgb(85, 255, 255);
+  }
+  
+  .seckill ul li:nth-child(5) {
+    border-top: 1px solid rgb(0, 0, 255);
+  }
+
+
+   /* 广告图片样式 */
+  .ad1 {
+    width: 1200px;
+    height: 119px;
+    margin: 0 auto;
+}
+
+/* 手机部分样式 */
+.mobile { 
+    height: 604px;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.mobile h2 {
+    height: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+.mobile .left {
+    float: left;
+    width: 240px;
+    height: 524px;
+}
+
+.mobile .right {
+    float: left;
+    width: 960px;
+    height: 524px;
+}
+
+.mobile .right ul li {
+    float: left;
+    width: 225px;
+    height: 255px;
+    background-color: #fff;
+    margin-left: 15px;
+    margin-bottom: 14px;
+    text-align: center;
+    padding-top: 30px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.mobile .right ul li:nth-child(5){
+    margin-bottom: 0;
+}
+.mobile .right ul li:nth-child(6){
+    margin-bottom: 0;
+}
+.mobile .right ul li:nth-child(7){
+    margin-bottom: 0;
+}
+.mobile .right ul li:nth-child(8) {
+    margin-bottom: 0;
+}
+
+.mobile .right ul li:hover {
+    box-shadow: 10px 10px 10px #e6e6e6; /* 添加阴影 */
+    transform: scale(1.01); /* 放大 1.01 倍 */
+}
+
+.mobile p:nth-child(2) {
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+.mobile p:nth-child(3) {
+    color: #ccc;
+    font-size: 12px;
+}
+
+.mobile p:nth-child(4) {
+    padding-top: 5px;
+    color: rgb(255, 103, 0);
+    font-size: 12px;
+}
+
+
+/* 广告图片样式 */
+.ad2 {
+    width: 1200px;
+    height: 119px;
+    margin: 0 auto;
+}
+
+
+/* 电视部分样式 */
+.TV {
+    height: 380px;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.TV h2 {
+    height: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.TV ul li {
+    float: left;
+    width: 228px;
+    height: 298px;
+    background-color: #fff;
+    margin-left: 15px;
+    text-align: center;
+    padding-top: 70px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.TV ul li:nth-child(1) {
+    margin-left: 0;
+    padding-top: 0;
+}
+
+.TV p:nth-child(2) {
+    padding-top: 50px;
+    font-size: 14px;
+}
+
+.TV p:nth-child(3) {
+    color: #ccc;
+    font-size: 12px;
+}
+
+.TV p:nth-child(4) {
+    padding-top: 5px;
+    color: rgb(255, 103, 0);
+    font-size: 12px;
+}
+
+.TV ul li:hover {
+    transform: scale(1.01);
+    box-shadow: 10px 10px 10px #e6e6e6;
+}
+
+/* 视频部分样式 */
+.video { 
+    height: 280px;
+}
+
+.video h2 {
+    height: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.video ul li {
+    float: left;
+    width: 288px;
+    height: 240px;
+    background-color: #fff;
+    margin-left: 15px;
+    box-sizing: border-box;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.video ul li:nth-child(1) {
+    margin-left: 0;
+    padding-top: 0;
+}
+
+.video ul li:hover {
+    transform: scale(1.01);
+    box-shadow: 10px 10px 10px #e6e6e6;
+}
+
+.video ul li p:nth-child(2) {
+    padding-top: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* 服务部分样式 */
+.service{    
+height:70px;
+margin-top:30px;
+background-color:#fff;
+}
+.serCon{
+    height:70px;
+    padding: 15px 0;
+    border-bottom:1px solid #ccc;
+    box-sizing:border-box;
+}
+.serCon li {
+    float: left;
+    width: 239px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.serCon li:last-child {
+    border-right: none;
+}
+
+.serCon li a:hover {
+    color: rgb(255, 103, 0);
+    cursor: default;
+}
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(51, 51, 51);
+    color: #ccc;
+    font-size: 11px;
+}
+
+.footerTop {
+    width: 1200px;
+    height: 100px;
+    padding-top: 30px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.footerTop .logo {
+    float: right;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+}
+
+.footerTop .info {
+    float: left;
+    line-height: 25px;
+}
+
+.info a {
+    color: rgb(201, 201, 201);
+}
+.footerBot {
+    width: 1200px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;
+    color: rgb(142，142，142);
+}

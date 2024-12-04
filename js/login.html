@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>小米商城--登录</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerCon">
+            <ul class="left">
+                <li><a href="index.html">小米商城</a></li>
+                <li><a href="#">MIUI</a></li>
+                <li><a href="#">云服务</a></li>
+                <li><a href="#">金融</a></li>
+                <li><a href="#">有品</a></li>
+                <li><a href="#">小爱开放平台</a></li>
+                <li><a href="#">企业团购</a></li>
+                <li><a href="#">资质证照</a></li>
+                <li><a href="#">协议规则</a></li>
+                <li class="ewm">
+                    <a href="#">下载App</a>
+                    <img src="../images/ewm.png" width="100" alt="二维码">
+                </li>
+                <li><a href="#">智能生活</a></li>
+            </ul>
+            <ul class="right">
+                <li id="loginLink"><a href="login.html">登录</a></li>
+                <li id="registerLink"><a href="register.html">注册</a></li>
+                <li id="userWelcome" style="display: none;"></li> <!-- 显示欢迎信息 -->
+                <li><a href="#">消息通知</a></li>
+                <li><a href="#" class="shopcar">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>购物车 (0)</span></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section>
+        <aside><img src="../images/log.jpg" width="600" height="364" /></aside>
+        <div class="main">
+            <form action="#" method="post" class="login">
+                <h1>用户登录</h1>
+                <p><input type="text" class="user" id="userId" placeholder="邮箱/手机号码/小米ID" required="required" /></p>
+                <p><input type="password" class="pwd" id="password" placeholder="密码" /></p>
+                <p><input type="button" class="btn" id="loginButton" value="登录" /></p> <!-- 给登录按钮添加 id -->
+                <p class="check">
+                    <input type="checkbox" id="agreeCheckbox" />
+                    <span>已阅读并同意小米账户<a href="#">用户协议</a>和<a href="#">隐私政策</a></span>
+                </p>
+                <p id="errorMessage" style="color: red; display: none;">用户名或密码错误</p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        让全球每个人都能享受科技带来的美好生活
+    </footer>
+
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

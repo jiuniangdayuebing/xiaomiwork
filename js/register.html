@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>小米商城--注册</title>
+    <link rel="stylesheet" type="text/css" href="../css/register.css" />
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="register.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="headerCon">
+            <ul class="left">
+                <li><a href="index.html">小米商城</a></li>
+                <li><a href="#">MIUI</a></li>
+                <li><a href="#">云服务</a></li>
+                <li><a href="#">金融</a></li>
+                <li><a href="#">有品</a></li>
+                <li><a href="#">小爱开放平台</a></li>
+                <li><a href="#">企业团购</a></li>
+                <li><a href="#">资质证照</a></li>
+                <li><a href="#">协议规则</a></li>
+                <li class="ewm">
+                    <a href="#">下载App</a>
+                    <img src="../images/ewm.png" width="100" alt="二维码">
+                </li>
+                <li><a href="#">智能生活</a></li>
+            </ul>
+            <ul class="right">
+                <li><a href="login.html">登录</a></li>
+                <li><a href="register.html">注册</a></li>
+                <li><a href="#">消息通知</a></li>
+                <li><a href="#" class="shopcar">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>购物车 (0)</span></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section>
+        <aside><img src="../images/reg.jpg" width="600" height="364" /></aside>
+        <div class="main">
+            <form action="#" method="post" class="register" onsubmit="return validateForm()">
+                <h1>用户注册</h1>
+                <p><input type="text" id="txtID" class="user" placeholder="小米ID" required="required" /></p>
+                <p><input type="password" id="txtPwd" class="pwd" placeholder="密码" required="required" /></p>
+                <p><input type="password" id="txtPwd2" class="pwd" placeholder="确认密码" required="required" /></p>
+                <p><input type="submit" class="sub" value="注册" id="registerBtn" disabled /></p>
+                <p class="check">
+                    <input type="checkbox" id="agreeCheckbox" />
+                    <span>已阅读并同意小米账户<a href="#">用户协议</a>和<a href="#">隐私政策</a></span>
+                </p>
+                <p id="errorMessage" style="color: red; display: none;">该小米ID已注册,请直接登录。</p>
+            </form>
+        </div>
+    </section>
+    <footer>
+        让全球每个人都能享受科技带来的美好生活
+    </footer>
+</body>
+
+</html>
